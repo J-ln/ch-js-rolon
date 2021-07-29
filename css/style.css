@@ -22,13 +22,17 @@ li {
 .container {
   width: 100%;
   height: auto;
+  background-color: #567895;
 }
 
 .container .container__classes {
-  width: 100%;
-  height: auto;
+  width: 90%;
+  height: 90%;
   min-height: 100vh;
-  background-color: #567895;
+  margin: 0vh auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 0.5rem;
+          box-shadow: 0 0 0.5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (2fr)[5];
@@ -58,7 +62,7 @@ li {
   margin: 3.5vh auto 7vh;
   background-color: #818f96;
   padding: 1.5em 3rem;
-  width: 60vh;
+  width: 85%;
   height: auto;
   border-radius: 5px;
   border: 1px solid black;
@@ -82,6 +86,22 @@ li {
           box-shadow: 0 0 0.1rem;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .container__classes {
+    max-width: 720px;
+    margin: 0vh auto;
+  }
+  .container__classes .classes__list {
+    width: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .container__classes {
+    margin-top: 2vh !important;
+  }
 }
 
 /* --------------Clase 1-------------- */
@@ -128,6 +148,7 @@ li {
   text-shadow: 0.1rem 0.1rem 0.1rem black;
 }
 
+/* --------------General-------------- */
 .arrow {
   border: 10px solid #e7ecef;
   border-width: 0 10px 10px 0;
@@ -143,13 +164,12 @@ li {
 }
 
 .jslogo {
-  position: fixed;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  padding: 2rem 1.3rem 0 3rem;
+  position: -webkit-sticky;
+  position: sticky;
+  text-align: center;
+  padding: 1rem 1.3rem;
   font-family: "Neucha", cursive;
-  font-size: 6rem;
+  font-size: 3rem;
   color: #e7ecef;
   background-color: black;
   border-radius: 0 0 5px 0;
@@ -157,13 +177,32 @@ li {
 
 .sign {
   position: fixed;
-  bottom: 0;
-  right: 2vh;
+  bottom: 8vh;
+  right: -6.2vh;
   padding: 1rem 1rem;
-  font-family: "Neucha", cursive;
-  font-size: 4rem;
+  font-size: 1.5rem;
   color: #e7ecef;
   background-color: black;
   border-radius: 5px 5px 0 0;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+@media (min-width: 768px) {
+  .sign {
+    bottom: 0;
+    right: 6vh;
+    font-size: 2.5rem;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  .jslogo {
+    position: fixed;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    font-size: 6rem;
+    padding: 2rem 1.3rem 0 3rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

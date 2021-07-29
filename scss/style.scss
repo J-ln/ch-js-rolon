@@ -19,6 +19,7 @@ li {
     list-style-type: none;
 }
 
+$backg: #365f88;
 $blanco: #e7ecef;
 $azul: #567895;
 $list: #818f96;
@@ -28,11 +29,14 @@ $sec-font: "Neucha", cursive;
 .container {
     width: 100%;
     height: auto;
+    background-color: $azul;
     .container__classes {
-        width: 100%;
-        height: auto;
+        width: 90%;
+        height: 90%;
         min-height: 100vh;
-        background-color: $azul;
+        margin: 0vh auto;
+        background-color: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 0.5rem;
         display: grid;
         grid-template-columns: repeat(5, 2fr);
         grid-template-rows: repeat(5, 2fr);
@@ -50,7 +54,7 @@ $sec-font: "Neucha", cursive;
             margin: 3.5vh auto 7vh;
             background-color: $list;
             padding: 1.5em 3rem;
-            width: 60vh;
+            width: 85%;
             height: auto;
             border-radius: 5px;
             border: 1px solid black;
@@ -73,6 +77,22 @@ $sec-font: "Neucha", cursive;
                 }
             }
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .container__classes {
+        max-width: 720px;
+        margin: 0vh auto;
+        .classes__list {
+            width: 60vh;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container__classes {
+        margin-top: 2vh !important;
     }
 }
 
@@ -108,6 +128,8 @@ $sec-font: "Neucha", cursive;
     }
 }
 
+/* --------------General-------------- */
+
 .arrow {
     border: 10px solid $blanco;
     border-width: 0 10px 10px 0;
@@ -122,13 +144,11 @@ $sec-font: "Neucha", cursive;
 }
 
 .jslogo {
-    position: fixed;
-    display: inline-block;
-    top: 0;
-    left: 0;
-    padding: 2rem 1.3rem 0 3rem;
+    position: sticky;
+    text-align: center;
+    padding: 1rem 1.3rem;
     font-family: $sec-font;
-    font-size: 6rem;
+    font-size: 3rem;
     color: $blanco;
     background-color: black;
     border-radius: 0 0 5px 0;
@@ -136,12 +156,29 @@ $sec-font: "Neucha", cursive;
 
 .sign {
     position: fixed;
-    bottom: 0;
-    right: 2vh;
+    bottom: 8vh;
+    right: -6.2vh;
     padding: 1rem 1rem;
-    font-family: $sec-font;
-    font-size: 4rem;
+    font-size: 1.5rem;
     color: $blanco;
     background-color: black;
     border-radius: 5px 5px 0 0;
+    transform: rotate(-90deg);
+}
+
+@media (min-width: 768px) {
+    .sign {
+        bottom: 0;
+        right: 6vh;
+        font-size: 2.5rem;
+        transform: rotate(0);
+    }
+    .jslogo {
+        position: fixed;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        font-size: 6rem;
+        padding: 2rem 1.3rem 0 3rem;
+    }
 }
