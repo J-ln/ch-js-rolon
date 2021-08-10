@@ -40,13 +40,12 @@ function randomNumberGame() {
     let start = prompt(
         'Hola. Escribe "si" para empezar el juego o "no" para salir:'
     );
-    switch (start) {
-        default:
-            alert("Ingresaste una opcion incorrecta.");
-        case "si":
-            game();
-        case "no":
-            break;
+    while (start !== "no") {
+        game();
+        start = prompt("Queres jugar otra vez? si/no :");
+        if (start !== "si" && start !== "no") {
+            alert("Ingrsaste una opcion no valida.");
+        }
     }
 }
 
