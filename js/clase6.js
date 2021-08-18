@@ -1,5 +1,6 @@
 class Patern {
-    constructor(color, size, form) {
+    constructor(name, color, size, form) {
+        this.name = name;
         this.color = color;
         this.size = parseInt(size);
         this.form = form;
@@ -54,19 +55,63 @@ class Patern {
             alert("Ha ingresado una opcion incorrecta");
         }
     }
+    changeName() {
+        this.name = prompt("Ingrese un nombre para su patron:");
+        alert("El nuevo nombre de su patron es:" + this.name);
+    }
 }
+
+let userPatterns = [
+    new Patern("x-blue-cir", "azul", 64, "circulo"),
+    new Patern("red-rec", "rojo", 32, "rectangulo"),
+];
+let currentPattern;
 
 function createPatern() {
     let res = prompt("Quiere crear un nuevo patron? (Si/No)");
     res = res.toLowerCase();
     if (res == "si") {
-        const patern1 = new Patern("", "", "");
-        patern1.changeColor();
-        patern1.changeSize();
-        patern1.changeForm();
-        console.log(patern1);
+        const patern = new Patern("", "", "", "");
+        patern.changeName();
+        patern.changeColor();
+        patern.changeSize();
+        patern.changeForm();
+        console.log(patern);
+        userPatterns.push(patern);
+        console.log(userPatterns);
+    }
+}
+
+function setCurrentPatern() {
+    let patternList = [];
+    userPatterns.forEach((pattern) => {
+        patternList.push(pattern.name);
+    });
+    let choice = prompt("Elija un patron: " + patternList.join(", "));
+    if (userPatterns.find((pattern) => pattern.name === choice) !== undefined) {
+        currentPattern = userPatterns.find(
+            (pattern) => pattern.name === choice
+        );
+    } else {
+        alert("Ha ingresado una opcion invalida");
+    }
+}
+
+function sortPaternsByName(a, b) {
+    return a.name.localeCompare(b.name);
+}
+
+function sortPatterns() {
+    let ans = prompt("Quiere ordenar su patrones: si/no");
+    if (ans == "si") {
+        userPatterns.sort(sortPaternsByName);
+        console.log(userPatterns);
     }
 }
 
 alert("Bienvenido");
 createPatern();
+sortPatterns();
+setCurrentPatern();
+
+console.log(currentPattern);
