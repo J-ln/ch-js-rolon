@@ -118,13 +118,7 @@ function drawPatterns() {
     });
 }
 
-// alert("Bienvenido");
-// createPatern();
-// sortPatterns();
-// setCurrentPatern();
-// console.log(userPatterns);
 drawPatterns();
-// console.log(currentPattern);
 
 const newPatternBtn = document.getElementById("addPattern");
 
