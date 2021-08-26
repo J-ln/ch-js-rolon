@@ -1,4 +1,5 @@
 .navbar {
+    overflow-y: scroll;
     width: 20rem;
     height: 100%;
     position: absolute;
@@ -6,6 +7,20 @@
     transition: width 0.3s;
     z-index: 1000;
     box-shadow: 0.05rem 0 0.4rem rgba(255, 255, 255, 0.295);
+}
+.navbar::-webkit-scrollbar {
+    width: 0.2rem;
+}
+
+.navbar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    background: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem white;
 }
 .navbar_buttons {
     padding-top: 10rem;
@@ -17,6 +32,33 @@
     color: white;
     .navbar_label {
         background-color: whitesmoke;
+        color: black;
+        font-weight: 900;
+        width: 60%;
+        margin: 1rem auto;
+        padding: 1rem 0;
+        text-align: center;
+        border-radius: 10px;
+        overflow-x: hidden;
+        border: 1px groove gray;
+        box-shadow: 0.1rem 0.1rem 0.3rem rgb(184, 184, 184),
+            -0.1rem -0.1rem 0.3rem rgb(148, 144, 144);
+        &:hover {
+            box-shadow: inset 0.4rem 0 0.3rem rgba(15, 15, 15, 0.4),
+                inset 0 0.4rem 0.3rem rgba(15, 15, 15, 0.4),
+                inset 0 -0.4rem 0.3rem rgba(131, 129, 129, 0.4),
+                inset -0.4rem 0 0.3rem rgba(131, 129, 129, 0.4);
+        }
+    }
+}
+
+.navbar_patterns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .pattern_btn {
+        background-color: hsl(180, 51%, 71%);
         color: black;
         font-weight: 900;
         width: 60%;

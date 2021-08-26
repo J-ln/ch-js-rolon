@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Neucha&display=swap");
 .navbar {
+  overflow-y: scroll;
   width: 20rem;
   height: 100%;
   position: absolute;
@@ -9,6 +10,23 @@
   z-index: 1000;
   -webkit-box-shadow: 0.05rem 0 0.4rem rgba(255, 255, 255, 0.295);
           box-shadow: 0.05rem 0 0.4rem rgba(255, 255, 255, 0.295);
+}
+
+.navbar::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.navbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 1rem white;
+          box-shadow: 0 0 1rem white;
 }
 
 .navbar_buttons {
@@ -42,6 +60,39 @@
 }
 
 .navbar_link .navbar_label:hover {
+  -webkit-box-shadow: inset 0.4rem 0 0.3rem rgba(15, 15, 15, 0.4), inset 0 0.4rem 0.3rem rgba(15, 15, 15, 0.4), inset 0 -0.4rem 0.3rem rgba(131, 129, 129, 0.4), inset -0.4rem 0 0.3rem rgba(131, 129, 129, 0.4);
+          box-shadow: inset 0.4rem 0 0.3rem rgba(15, 15, 15, 0.4), inset 0 0.4rem 0.3rem rgba(15, 15, 15, 0.4), inset 0 -0.4rem 0.3rem rgba(131, 129, 129, 0.4), inset -0.4rem 0 0.3rem rgba(131, 129, 129, 0.4);
+}
+
+.navbar_patterns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar_patterns .pattern_btn {
+  background-color: #8fdbdb;
+  color: black;
+  font-weight: 900;
+  width: 60%;
+  margin: 1rem auto;
+  padding: 1rem 0;
+  text-align: center;
+  border-radius: 10px;
+  overflow-x: hidden;
+  border: 1px groove gray;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.3rem #b8b8b8, -0.1rem -0.1rem 0.3rem #949090;
+          box-shadow: 0.1rem 0.1rem 0.3rem #b8b8b8, -0.1rem -0.1rem 0.3rem #949090;
+}
+
+.navbar_patterns .pattern_btn:hover {
   -webkit-box-shadow: inset 0.4rem 0 0.3rem rgba(15, 15, 15, 0.4), inset 0 0.4rem 0.3rem rgba(15, 15, 15, 0.4), inset 0 -0.4rem 0.3rem rgba(131, 129, 129, 0.4), inset -0.4rem 0 0.3rem rgba(131, 129, 129, 0.4);
           box-shadow: inset 0.4rem 0 0.3rem rgba(15, 15, 15, 0.4), inset 0 0.4rem 0.3rem rgba(15, 15, 15, 0.4), inset 0 -0.4rem 0.3rem rgba(131, 129, 129, 0.4), inset -0.4rem 0 0.3rem rgba(131, 129, 129, 0.4);
 }
