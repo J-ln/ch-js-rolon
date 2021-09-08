@@ -31,6 +31,12 @@
 
 .navbar_buttons {
   padding-top: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navbar_link {
@@ -95,6 +101,146 @@
 .navbar_patterns .pattern_btn:hover {
   -webkit-box-shadow: inset 0.4rem 0 0.3rem rgba(15, 15, 15, 0.4), inset 0 0.4rem 0.3rem rgba(15, 15, 15, 0.4), inset 0 -0.4rem 0.3rem rgba(131, 129, 129, 0.4), inset -0.4rem 0 0.3rem rgba(131, 129, 129, 0.4);
           box-shadow: inset 0.4rem 0 0.3rem rgba(15, 15, 15, 0.4), inset 0 0.4rem 0.3rem rgba(15, 15, 15, 0.4), inset 0 -0.4rem 0.3rem rgba(131, 129, 129, 0.4), inset -0.4rem 0 0.3rem rgba(131, 129, 129, 0.4);
+}
+
+.content_modal {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 150;
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.content_modal.modal--close {
+  visibility: hidden;
+}
+
+.content_modal .modal_form {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "name colorp" "size colorp" "form colorp" " button button";
+  -ms-grid-columns: 2fr 2fr;
+      grid-template-columns: 2fr 2fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 70%;
+  width: 50%;
+  background-color: #121212;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0.1rem 0.1rem 1rem rgba(255, 254, 254, 0.2), inset -0.2rem -0.2rem 1rem rgba(0, 0, 0, 0.99);
+          box-shadow: inset 0.1rem 0.1rem 1rem rgba(255, 254, 254, 0.2), inset -0.2rem -0.2rem 1rem rgba(0, 0, 0, 0.99);
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+}
+
+.content_modal .modal_form .modal_nameP {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content_modal .modal_form .modal_sizeP {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: size;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content_modal .modal_form .modal_formP {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: form;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content_modal .modal_form .modal_colorP {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: colorp;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content_modal .modal_form .modal_input--text {
+  border-radius: 10px;
+  padding: 0.3rem 0.8rem;
+  font-size: 1.2rem;
+  width: 50%;
+  outline-style: none;
+}
+
+.content_modal .modal_form .modal_btn {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: button;
+  font-weight: 600;
+  margin: 0 auto;
+  padding: 1rem 4rem;
+  border-radius: 10px;
+  overflow-x: hidden;
+  border: 1px groove gray;
+  -webkit-box-shadow: inset 0.1rem 0.1rem 0.5rem rgba(184, 184, 184, 0.9), inset -0.1rem -0.1rem 0.5rem rgba(0, 0, 0, 0.99);
+          box-shadow: inset 0.1rem 0.1rem 0.5rem rgba(184, 184, 184, 0.9), inset -0.1rem -0.1rem 0.5rem rgba(0, 0, 0, 0.99);
+}
+
+.content_modal .modal_form .modal_btn:hover {
+  -webkit-box-shadow: inset -0.1rem -0.1rem 0.5rem rgba(184, 184, 184, 0.9), inset 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.99);
+          box-shadow: inset -0.1rem -0.1rem 0.5rem rgba(184, 184, 184, 0.9), inset 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.99);
 }
 
 * {
@@ -305,5 +451,34 @@ li {
     font-size: 6rem;
     padding: 2rem 1.3rem 0 3rem;
   }
+}
+
+.setting_addPattern {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  width: auto;
+  width: 10rem;
+  min-width: 6rem;
+  max-width: 10rem;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 15px;
+  overflow-x: hidden;
+  cursor: pointer;
+  border: 1px groove whitesmoke;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.3rem #b8b8b8, -0.1rem -0.1rem 0.3rem #949090;
+          box-shadow: 0.1rem 0.1rem 0.3rem #b8b8b8, -0.1rem -0.1rem 0.3rem #949090;
+}
+
+.setting_addPattern:hover {
+  background: whitesmoke;
+}
+
+.setting_addPattern:active {
+  -webkit-box-shadow: inset 0.4rem 0 0.3rem rgba(15, 15, 15, 0.4), inset 0 0.4rem 0.3rem rgba(15, 15, 15, 0.4), inset 0 -0.4rem 0.3rem rgba(131, 129, 129, 0.4), inset -0.4rem 0 0.3rem rgba(131, 129, 129, 0.4);
+          box-shadow: inset 0.4rem 0 0.3rem rgba(15, 15, 15, 0.4), inset 0 0.4rem 0.3rem rgba(15, 15, 15, 0.4), inset 0 -0.4rem 0.3rem rgba(131, 129, 129, 0.4), inset -0.4rem 0 0.3rem rgba(131, 129, 129, 0.4);
 }
 /*# sourceMappingURL=style.css.map */
