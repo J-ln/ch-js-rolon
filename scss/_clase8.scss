@@ -1,12 +1,28 @@
 .navbar {
     overflow-y: scroll;
+    overflow: visible;
     width: 20rem;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     background-color: #050505ff;
     transition: width 0.3s;
     z-index: 1000;
     box-shadow: 0.05rem 0 0.4rem rgba(255, 255, 255, 0.295);
+    .navbar-close {
+        cursor: pointer;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 3rem;
+        width: 5rem;
+        height: 6rem;
+        background: #050505ff;
+        position: absolute;
+        right: -5rem;
+        border-radius: 0 50% 50% 0;
+    }
 }
 .navbar::-webkit-scrollbar {
     width: 0.2rem;
